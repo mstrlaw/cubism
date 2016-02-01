@@ -52,8 +52,8 @@ Router.route(
 						else{
 							editorObj.editor.import(world[0].worldState);
 						}
-						
 						Session.set('currentWorld', world[0]._id);
+						$('body').find('.scene').css({'display':'block'});
 					}
 					// else{
 					// 	/*In case there are 0 worlds in the DB */

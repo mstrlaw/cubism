@@ -23,13 +23,16 @@ Router.route(
   				to: 'menuArea',
   				data: function(){
 					return { 
-						'worlds': Worlds.find(),
+						'worlds': Worlds.find({
+							owner: Meteor.userId()
+						}),
 					};
   				}
   			});
 		},
 		onAfterAction: function(){
-			$('body').find('.scene').remove();
+			/* Le hack to hide the scene */
+			$('body').find('.scene').css({'display':'none'});
 		}
 	}
 );
