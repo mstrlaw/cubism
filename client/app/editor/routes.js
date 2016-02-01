@@ -10,7 +10,7 @@ Router.route(
 
 	  			this.render('editor');
 	  			
-	  			this.render('menu', {
+	  			this.render('editorMenu', {
 	  				to: 'menuArea',
 	  				data: function(){
 	  					

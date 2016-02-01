@@ -5,7 +5,20 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12 push-top">
-			<h2>Cubism: colaborative world building with voxel.css</h2>
+			<h2>Colaborative world building with voxel.css & Meteor</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 push-top">
+			<h3>Explore worlds</h3>
+			<div class="row">
+				{{#each worlds }}
+				<div class="col-sm-12">
+					<h2><a href="{{ pathFor route='editor' }}">{{ this.name }}</a></h2>
+					<hr>
+				</div>
+				{{/each}}
+			</div>
 		</div>
 	</div>
 </div>

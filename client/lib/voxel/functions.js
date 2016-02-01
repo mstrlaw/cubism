@@ -43,6 +43,6 @@ clearEditor = function(editorObj){
         editorObj.scene.attach(document.body);
         editorObj.editor.load();
 
-        //editorObj = undefined;
+        editorObj = undefined;
     }
 };

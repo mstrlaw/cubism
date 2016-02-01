@@ -1,0 +1,33 @@
+<template name="homeMenu">
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ pathFor 'home' }}">Cubism</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}}
+        {{#if currentUser}}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Worlds<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {{# each worlds }}
+            <li><a class="load-world" id="{{this._id}}" href="{{ pathFor route='editor' }}">{{ this.name }}</a></li>
+            {{/each}}
+            <li role="separator" class="divider"></li>
+            <li><a class="new-world" href="{{ pathFor route='editor' }}">New World</a></li>
+          </ul>
+        </li>
+        {{/if}}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</template>

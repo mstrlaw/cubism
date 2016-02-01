@@ -3,7 +3,7 @@ Router.route(
 	{
 		name: 'home',
 		onBeforeAction: function(){
-			if(typeof(editorObj) !== 'undefined'){ clearEditor(editorObj); };
+			if(typeof(editorObj) !== 'undefined'){clearEditor(editorObj);};
 			Session.set('currentWorld');
 			this.next();
 		},
@@ -11,9 +11,15 @@ Router.route(
 			return [Meteor.subscribe("worlds")];
 		},
 		action: function(){
-  			this.render('home');
+  			this.render('home', {
+  				data: function(){
+					return { 
+						'worlds': Worlds.find(),
+					};
+  				}
+  			});
   			
-  			this.render('menu', {
+  			this.render('homeMenu', {
   				to: 'menuArea',
   				data: function(){
 					return { 
@@ -22,5 +28,8 @@ Router.route(
   				}
   			});
 		},
+		onAfterAction: function(){
+			$('body').find('.scene').remove();
+		}
 	}
 );
