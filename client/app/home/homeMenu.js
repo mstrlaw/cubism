@@ -10,11 +10,3 @@ Template.homeMenu.events({
 	},
 	
 });
-
-Template.homeMenu.helpers({
-	'isPublic': function(){
-		if(typeof(Session.get('currentWorld')) !== 'undefined'){
-			return Worlds.findOne({_id:Session.get('currentWorld')}).published;
-		}
-	}
-})

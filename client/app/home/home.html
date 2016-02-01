@@ -4,21 +4,14 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-12 push-top">
+		<div class="col-sm-12">
 			<h2>Colaborative world building with voxel.css & Meteor</h2>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-12 push-top">
+		<div class="col-sm-12">
 			<h3>Explore worlds</h3>
-			<div class="row">
-				{{#each worlds }}
-				<div class="col-sm-12">
-					<h2><a href="{{ pathFor route='editor' }}">{{ this.name }}</a></h2>
-					<hr>
-				</div>
-				{{/each}}
-			</div>
+			{{> worldList }}
 		</div>
 	</div>
 </div>

@@ -40,15 +40,15 @@
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions<span class="caret"></span></a>
           <ul class="dropdown-menu">
             {{#if isPublic}}
-            <li><a class="unpublish-world" href="#">Unpublish</a></li>
+            <li><a class="unpublish-world" href="#"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> Unpublish</a></li>
             {{else}}
-            <li><a class="publish-world" href="#">Publish</a></li>
+            <li><a class="publish-world" href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Publish</a></li>
             {{/if}}
             <li role="separator" class="divider"></li>
-            <li><a class="delete-world" href="#">Delete</a></li>
+            <li><a class="delete-world" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a></li>
           </ul>
         </li>
         {{/if}}
