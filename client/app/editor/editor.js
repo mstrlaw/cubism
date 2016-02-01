@@ -31,3 +31,28 @@ Template.editor.helpers({
 		}
 	}
 });
+
+Template.editor.events({
+	'click .edit-icon': function(e){
+		$('#worldName').focus();
+	},
+	'focus #worldName': function(e){
+		var content = e.currentTarget.innerHTML;
+	    e.currentTarget.setAttribute('data-content', content);
+	},
+	'blur #worldName': function(e){
+		var content = e.currentTarget.innerHTML;
+		
+		if(e.currentTarget.getAttribute('data-content') != content){
+		    e.currentTarget.innerHTML = '';
+		    Meteor.call('saveName', content, Session.get('currentWorld'), function(err, data){
+		        // if(!err){
+		        //     Materialize.toast('Brief saved.', 4000, 'green');
+		        // }
+		        // else{
+		        //     Materialize.toast('Error saving project.', 4000, 'red');
+		        // }
+		    });
+		};
+	}
+})

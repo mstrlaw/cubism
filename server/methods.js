@@ -46,6 +46,18 @@ Meteor.methods({
 		}
 		
 	},
+	'saveName': function(name, currentWorld){
+		Worlds.update({
+			_id: currentWorld,
+			owner: Meteor.userId()
+		},
+		{
+			$set:{
+				'name': name,
+				'updated': new Date(),
+			}
+		});
+	},
 	'publishWorld': function(currentWorld){
 		Worlds.update({
 			_id: currentWorld
