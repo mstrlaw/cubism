@@ -35,10 +35,14 @@ saveWorld = function(editor, currentWorld){
 };
 
 clearEditor = function(editorObj){
-    if(Session.get('hasEditor') && typeof(editorObj) !== 'undefined'){
+    if(typeof(editorObj) !== 'undefined'){
 
         editorObj.editor.deleteSave();
-        editorObj.scene.detach(document.body);
+        try{ editorObj.scene.detach(document.body); }
+        catch(err){};
+        editorObj.scene.attach(document.body);
         editorObj.editor.load();
+
+        //editorObj = undefined;
     }
 };

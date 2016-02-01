@@ -2,6 +2,11 @@ Router.route(
 	'/',
 	{
 		name: 'home',
+		onBeforeAction: function(){
+			if(typeof(editorObj) !== 'undefined'){ clearEditor(editorObj); };
+			Session.set('currentWorld');
+			this.next();
+		},
 		waitOn: function(){
 			return [Meteor.subscribe("worlds")];
 		},

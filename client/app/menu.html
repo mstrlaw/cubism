@@ -19,10 +19,10 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Worlds <span class="caret"></span></a>
           <ul class="dropdown-menu">
             {{# each worlds }}
-            <li><a class="load-world" id="{{this._id}}" href="#">{{ this.name }}</a></li>
+            <li><a class="load-world" id="{{this._id}}" href="{{ pathFor route='editor' }}">{{ this.name }}</a></li>
             {{/each}}
             <li role="separator" class="divider"></li>
-            <li><a class="new-world" href="#">New World</a></li>
+            <li><a class="new-world" href="{{ pathFor route='editor' }}">New World</a></li>
           </ul>
         </li>
         <li class="dropdown">
