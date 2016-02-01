@@ -20,6 +20,37 @@ Template.menu.events({
 	},
 	'click .unpublish-world': function(e){
 		Meteor.call('unpublishWorld', Session.get('currentWorld'));
+	},
+	'click .mesh-dropdown a': function(e){
+		switch(e.currentTarget.className){
+			case 'dirt':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.dirt);
+				break;
+			case 'grass':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.grass);
+				break;
+			case 'water':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.water);
+				break;
+			case 'waterfall':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.waterFall);
+				break;
+			case 'waterfall-top':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.waterFallTop);
+				break;
+			case 'waterfall-crash':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.waterFallCrash);
+				break;
+			case 'tree':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.treeTrunk);
+				break;
+			case 'leaves':
+				editorObj.editor.setToolMesh(voxelcss.Meshes.treeLeaves);
+				break;
+			default:
+				editorObj.editor.setToolMesh(voxelcss.Meshes.grass);
+				
+		}
 	}
 
 });

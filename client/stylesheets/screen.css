@@ -2,3 +2,22 @@
 body {
   background-color: #eee;
 }
+
+/* line 5, ../sass/screen.scss */
+.mesh-dropdown {
+  width: 320px;
+}
+/* line 7, ../sass/screen.scss */
+.mesh-dropdown li {
+  float: left;
+  margin: 2px;
+  text-align: center;
+}
+/* line 11, ../sass/screen.scss */
+.mesh-dropdown li a {
+  padding: 0px;
+}
+/* line 13, ../sass/screen.scss */
+.mesh-dropdown li a img {
+  max-width: 100px;
+}
