@@ -1,0 +1,1 @@
+Worlds = new Mongo.Collection('worlds');
